@@ -1,38 +1,132 @@
-.App {
+#App {
+  height: 100vh;
+  overflow: hidden;
+}
+
+.head {
+  padding: 1rem;
   text-align: center;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.head h1 {
+  padding-top: 1rem;
+  padding-bottom: 1rem;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.head h3 {
+  font-weight: normal;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.user {
+  padding: 1rem;
+}
+
+.user-name {
+  font-style: italic;
+  color: rgb(165, 165, 165);
+}
+
+.todo-list {
+  justify-content: center;
+  align-items: center;
   display: flex;
   flex-direction: column;
-  align-items: center;
+}
+
+.form {
+  display: flex;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  align-items: center;
+  margin: 0 auto;
 }
 
-.App-link {
-  color: #61dafb;
+.form input {
+  margin: 1rem;
+  width: 30%;
+  border-radius: 0.175rem;
+  border: none;
+  outline: none;
+  padding: 0.5rem;
+  background-color: white;
+  color: black;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.btn {
+  border-radius: 0.175rem;
+  padding: 0.5rem 1.5rem;
+  font-weight: bold;
+  cursor: pointer;
+  border: none;
+}
+
+.btn-primary {
+  background-color: #0086ff;
+}
+
+.btn-primary:hover {
+  background-color: #49a9ff;
+}
+
+.btn-danger {
+  background-color: #ff3838;
+}
+
+.btn-danger:hover {
+  background-color: #ff6161;
+}
+
+.inactive {
+  background-color: #ff3838;
+  opacity: 0.75;
+  cursor: not-allowed;
+}
+
+.list-wrapper {
+  margin: 0 auto;
+  width: 50%;
+  overflow-y: auto;
+  overflow-x: hidden;
+  height: 63vh;
+}
+
+.todo-list {
+  margin: 1rem auto;
+  padding: 0.5rem;
+  list-style: none;
+}
+
+/* the single todo item in the list */
+.todo {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  padding: 0.75rem;
+  border-collapse: collapse;
+}
+
+.todo-edit {
+  border-radius: 0.175rem;
+  border: none;
+  outline: none;
+  padding: 0.5rem;
+  background-color: white;
+  color: black;
+  flex-grow: 1;
+  margin: 0 1rem;
+}
+
+/* selects only the delete button in the button group on a list item */
+.todo div .btn + .btn {
+  margin-left: 0.5rem;
+}
+
+/* selects all todos except the first, while supporting much more browsers than psudo selectors do */
+.todo-list .todo + .todo {
+  border-top: 1px solid #333333;
+}
+
+.status-heading {
+  margin-top: 2.5rem;
+  text-align: center;
 }
